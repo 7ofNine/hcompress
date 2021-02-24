@@ -1,0 +1,16 @@
+AC_INIT(src/hcomp.c)
+AM_INIT_AUTOMAKE(hcomp,1.1)
+AM_CONFIG_HEADER(config.h)
+
+AC_PROG_INSTALL
+
+CFLAGS=-O
+
+AC_PROG_CC
+AC_LANG_C
+AC_PROG_MAKE_SET
+
+AC_HEADER_STDC
+AC_CHECK_LIB(m,log,,AC_MSG_ERROR([required library m is missing]))
+
+AC_OUTPUT(Makefile src/Makefile doc/Makefile)

@@ -1,0 +1,71 @@
+2018 February 7
+This directory contains HCOMPRESS, the image compression package
+written by Richard L. White for use at the Space Telescope Science
+Institute (rlw@stsci.edu).  Briefly, the method used is:
+
+	(1) a wavelet transform called the H-transform (a Haar transform
+		generalized to two dimensions), followed by
+	(2) quantization that discards noise in the image while retaining
+		the signal on all scales, followed by
+	(3) quadtree coding of the quantized coefficients.
+
+The technique gives very good compression for astronomical images and
+is fast, requiring about 2 seconds for compression or decompression of
+a 512x512 image on a Sun SPARCstation 1.  The calculations are carried
+out using integer arithmetic and are entirely reversible.
+Consequently, the program can be used for either lossy or lossless
+compression, with no special approach needed for the lossless case
+(e.g. there is no need for a file of residuals.) Documentation on the
+use of the programs and on the compression method is included in the doc
+subdirectory.
+
+These programs can compress 2-byte integer images in a small variety of
+input formats.  The resulting compressed image file is machine-independent
+and may be transferred between computers with binary FTP.  The source
+code is reasonably machine-independent, although it has not been tested
+on a wide range of machines.  Installation instructions for Unix and
+VMS (VAX) machines are given in the README files in the appropriate
+subdirectories.  I would be very interested to hear of any attempts to
+install this code on other kinds of machines (e.g. MS-DOS, Macs.)
+
+INSTALLATION
+
+This version of the program has been converted to ANSI C and uses standard
+build procedures.  See the INSTALL file for detailed build instructions.
+For a standard build do this:
+
+tar xzf hcomp-1.2.tar.gz
+cd hcomp-1.2
+./configure
+make
+make install
+
+That ought to compile hcomp and install it in the standard locations.  If you
+stop after 'make', the executables are in the src directory.  The configure
+script has the usual options, e.g.,
+
+./configure --prefix=/home/rlw
+
+to change the installation location.  The installed scripts (with the default
+prefix) are:
+
+Binary executables:
+/usr/local/bin/hcomp
+/usr/local/bin/hdecomp
+
+csh wrapper scripts:
+/usr/local/bin/hcompress
+/usr/local/bin/hdecompress
+/usr/local/bin/fcompress
+/usr/local/bin/fdecompress
+
+Man page:
+/usr/local/man/man1/hcompress.1
+
+KNOWN BUGS
+
+I know of no bugs in this version but would welcome reports of any.
+
+Copyright (c) 1994 Association of Universities for Research
+in Astronomy. All rights reserved. Produced under National
+Aeronautics and Space Administration Contract No. NAS5-26555.

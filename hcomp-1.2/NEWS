@@ -1,0 +1,17 @@
+hcompress 1.1
+=============
+
+2009 May
+
+This is the first version released using the Gnu configure build
+system.  Functionally the software is almost identical to the
+previous (1994!) release, but one bug that affected the decompression
+of images with pixel values near the bounds of the 16-bit integer
+range (-32768 or 32767) has been fixed.  Note that the compressed
+images are not affected by this bug, so data compressed with the
+preceding version has no problems.
+
+Other changes of note: The software has been recoded to ANSI C standards
+and the interfaces have been changed to make it easily embedded
+in other applications (in which case the compressed data are written
+and read from an in-memory buffer rather than a file).

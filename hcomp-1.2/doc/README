@@ -1,0 +1,13 @@
+11 May 2009
+This directory contains documentation for HCOMPRESS.  Files include:
+
+hcompress.1    Unix man page
+hcompress.man  Description of how to use the programs (plain text file)
+paper.pdf      Paper describing the compression method (PDF file).
+
+The paper is "High Performance Compression of Astronomical Images",
+published in Space and Earth Science Data Compression Workshop,
+NASA CP-3183, ed. James C. Tilton, pp. 117-123.
+
+Additional documentation on installing the programs and on operating-system
+dependent problems may be found in the INSTALL file.
